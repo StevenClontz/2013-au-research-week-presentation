@@ -1,0 +1,250 @@
+% $Header: /home/vedranm/bitbucket/beamer/solutions/generic-talks/generic-ornate-15min-45min.en.tex,v 90e850259b8b 2007/01/28 20:48:30 tantau $
+
+\documentclass{beamer}
+
+% This file is a solution template for:
+
+% - Giving a talk on some subject.
+% - The talk is between 15min and 45min long.
+% - Style is ornate.
+
+
+
+% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% In principle, this file can be redistributed and/or modified under
+% the terms of the GNU Public License, version 2.
+%
+% However, this file is supposed to be a template to be modified
+% for your own needs. For this reason, if you use this file as a
+% template and not specifically distribute it as part of a another
+% package/program, I grant the extra permission to freely copy and
+% modify this file as you see fit and even to delete this copyright
+% notice. 
+
+
+\mode<presentation>
+{
+  \usetheme{Warsaw}
+  % or ...
+
+  \setbeamercovered{transparent}
+  % or whatever (possibly just delete it)
+}
+
+
+\usepackage[english]{babel}
+% or whatever
+
+\usepackage[latin1]{inputenc}
+% or whatever
+
+\usepackage{times}
+\usepackage[T1]{fontenc}
+% Or whatever. Note that the encoding and the font should match. If T1
+% does not look nice, try deleting the line with the fontenc.
+
+
+\usepackage{marvosym} % For \Smiley
+\usepackage{verbatim} % for \verbatiminput
+
+\title[Limited Information Strategies for Topological Games] % (optional, use only with long paper titles)
+{Limited Information Strategies for Topological Games}
+
+\subtitle
+{GSC Scholars' Forum / AU Research Week 2013} % (optional)
+
+\author%[Author, Another] % (optional, use only with lots of authors)
+{Steven~Clontz}%\inst{1} \and S.~Another\inst{2}}
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+
+\institute[Auburn University] % (optional, but mostly needed)
+{
+  %\inst{1}%
+  Department of Mathematics and Statistics\\
+  Auburn University}
+  %\and
+  %\inst{2}%
+  %Department of Theoretical Philosophy\\
+  %University of Elsewhere}
+% - Use the \inst command only if there are several affiliations.
+% - Keep it simple, no one is interested in your street address.
+
+\date[13-02-27] % (optional)
+{February 27, 2013}
+
+\subject{Limited Information Strategies for Topological Games}
+% This is only inserted into the PDF information catalog. Can be left
+% out. 
+
+
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+ \pgfdeclareimage[height=1cm]{university-logo}{auburn_logo.png}
+ \logo{\pgfuseimage{university-logo}}
+
+
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+%\AtBeginSubsection[]
+%{
+%  \begin{frame}<beamer>{Outline}
+%    \tableofcontents[currentsection,currentsubsection]
+%  \end{frame}
+%}
+
+
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command: 
+
+%\beamerdefaultoverlayspecification{<+->}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+
+  {\tiny http://www.stevenclontz.com/AURW2013/}
+\end{frame}
+
+\begin{frame}{Table of Contents}
+  \tableofcontents
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+
+% Since this a solution template for a generic talk, very little can
+% be said about how it should be structured. However, the talk length
+% of between 15min and 45min and the theme suggest that you stick to
+% the following rules:  
+
+% - Exactly two or three sections (other than the summary).
+% - At *most* three subsections per section.
+% - Talk about 30s to 2min per frame. So there should be between about
+%   15 and 30 frames, all told.
+
+\section{Introduction}
+
+\begin{frame}{Abstract}%{Subtitles are optional.}
+  % - A title should summarize the slide in an understandable fashion
+  %   for anyone how does not follow everything on the slide itself.
+
+  \begin{itemize}
+  \item
+    Many definitions of topological properties can be elegantly described in terms of a two-player ``topological game'' of countably infinite length. 
+  \pause
+  \item
+    In a topological game, a property of the topological space being played upon is characterized by whether one player or another has a ``winning strategy'', a strategy which cannot be countered by any possible play by the opponent. 
+  \pause
+  \item 
+    The presenter's research involves investigating several topological games from the literature for properties characterized by the existence of winning ``limited information'' strategies, such as Markov strategies which only require knowledge of the round number and only the most recent move of the opponent. 
+  \end{itemize}
+\end{frame}
+
+\section{Topology \& Infinite Length Games}
+
+\subsection{Topology}
+
+\begin{frame}{Topology}
+
+  \begin{itemize}
+  \item
+    In this section, I'll abstractly describe topology as the study of ``closeness''.
+  \pause
+  \item
+    I'll introduce the topology of $\mathbb{R}^2$, and the topology of a more abstract space (sequential fan, call it the Milky Way Space).
+  \pause
+  \item
+    I'll also discuss applications, such as data analysis.
+  \end{itemize}
+\end{frame}
+
+\subsection{Games}
+
+\begin{frame}{Two Player Finite Games}
+
+  \begin{itemize}
+  \item
+    In this section, I'll describe two-player simultaneous (example: Prisoner's Delimma) and sequential (example: tic-tac-toe, chess).
+  \pause
+  \item
+    I'll model sequential games as a sequence of choices made by each player, and describe the winner as the last player to make a legal move.
+  \pause
+  \item
+    Boxing analogy: Win by KO.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Two Player Infinite Games}
+
+  \begin{itemize}
+  \item
+    Then, I can extend a finite game into an infinite-length game where there may always be legal moves to choose from for each player.
+  \pause
+  \item
+    In that case, the game never ends, but as long as the players involved have a gameplan, we can consider the result of them sticking to said gameplan: the sequence of choices made by each player.
+  \pause
+  \item
+    If the game didn't end, we'll have a rule to judge how each player did throughout the game, and declare a winner that way.
+  \pause
+  \item
+    Boxing analogy: Win by Decision
+  \end{itemize}
+\end{frame}
+
+\section{Example of a Topological Game}
+
+\subsection{The Open-Point Game in $\mathbb{R}^2$}
+
+\begin{frame}{The Open-Point Game in $\mathbb{R}^2$}
+  
+  \begin{itemize}
+    \item
+      Topological games are infinite-length games ``played upon'' an arbitrary topological space.
+    \pause
+    \item
+      I'll walk through the rules of $Con_{O,P}(\mathbb{R}^2,\vec{0})$, using the analogy of a dartboard.
+    \pause
+    \item
+      I'll show how $O$ has a winning strategy in this game, and introduce the notation $O \uparrow Con_{O,P}(\mathbb{R}^2,\vec{0})$
+  \end{itemize}
+\end{frame}
+
+\subsection{The Open-Point Game on the Milky Way Space}
+
+\begin{frame}{The Open-Point Game on the Milky Way Space}
+  
+  \begin{itemize}
+    \item
+      I'll compare the last game to $Con_{O,P}(MW,\infty)$.
+    \pause
+    \item
+      I'll show the winning strategy for $P$.
+  \end{itemize}
+
+\end{frame}
+
+\subsection{So what?}
+
+\begin{frame}{So what?}
+  \begin{itemize}
+    \item
+      We care about these games because they provide very slick ways of defining ``properties'' of a topological space.
+    \pause
+    \item
+      We'll give a nasty definition of property $w$, and then claim that it's simpler to just say spaces $X$ where $O$ always has a winning strategy in the game $Con_{O,P}(X,x)$, or $O \uparrow Con_{O,P}(X,x)$.
+    \pause
+    \item
+      So rather than going through the details of a complex definition, we can just figure out whether or not $O$ can somehow guarantee a victory in the game.
+  \end{itemize}
+\end{frame}
+
+\end{document}
+
+
