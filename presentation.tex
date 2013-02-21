@@ -131,6 +131,8 @@
 
 \section{Introduction}
 
+\subsection{Abstract}
+
 \begin{frame}{Abstract}%{Subtitles are optional.}
   % - A title should summarize the slide in an understandable fashion
   %   for anyone how does not follow everything on the slide itself.
@@ -151,82 +153,203 @@
 
 \subsection{Topology}
 
-\begin{frame}{Topology}
+\begin{frame}{What is Topology?}
 
   \begin{itemize}
   \item
-    In this section, I'll abstractly describe topology as the study of ``closeness''.
+    Topology is, put simply, the study of mathematical ``spaces''.
   \pause
   \item
-    I'll introduce the topology of $\mathbb{R}^2$, and the topology of a more abstract space (sequential fan, call it the Milky Way Space).
+    Most of us have learned about the (usual) topology of the real line and the $xy$-plane in calculus.
   \pause
   \item
-    I'll also discuss applications, such as data analysis.
+    Topology is chiefly concerned with the ``structure'' of mathematical spaces. An example of a topological observation is that removing a point from the real line splits it into two pieces, while removing a point from the real plane does not.
+  \pause
+  \item
+    TODO: Add pictures of $\mathbb{R}$ and $\mathbb{R}^2$, and show that removing a point splits the first but not the second.
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Why study Topology?}
+  \begin{itemize}
+    \item 
+      One of the primary uses of topology is as a toolkit for other mathematicians. Topological facts are often cited within proofs in other mathematical fields.
+    \pause
+    \item TODO: Consider a proof of the Fundamental Theorem of Algebra?
+    \pause
+    \item
+      However, topology is also emerging as powerful tool in data analysis.
+      \pause
+      \begin{itemize}
+        \item A data analysist is given a finite number of data points: ordered lists of numbers ($n$-dimensional vectors).
+        \pause
+        \item These points may be embedded in the Euclidean topological space $\mathbb{R}^n$: by ``fattening'' them up, we gain insight as to the structure of the source of the data.
+        \pause
+        \item TODO: Add picture based on paper sent by Dabbs and citation.
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{What Should I Know?}
+  \begin{itemize}
+  \item
+    For this talk, I'll stick with one familiar topological space and one (most likely) unfamiliar one.
+  \pause
+  \item
+    When I'm talking about the \textbf{xy-plane}, I'm referring to the usual space of ordered pairs of real numbers from calculus. TODO: Add picture.
+  \pause
+  \item
+    We'll also use another example of a topological space, known by set-theoretic topologists as the ``sequential fan''. However, let's just call it the \textbf{Milky Way space}. TODO: Add picture
   \end{itemize}
 \end{frame}
 
 \subsection{Games}
 
-\begin{frame}{Two Player Finite Games}
+\begin{frame}{What's Game Theory?}
 
   \begin{itemize}
   \item
-    In this section, I'll describe two-player simultaneous (example: Prisoner's Delimma) and sequential (example: tic-tac-toe, chess).
+    Game theory is a powerful tool of use to anyone interested in the study of strategic decision-making: economists, biologists, logicians, political scientists...
   \pause
   \item
-    I'll model sequential games as a sequence of choices made by each player, and describe the winner as the last player to make a legal move.
+    Within game theory, there are two main types of two-player games: \textbf{simultaneous} and \textbf{sequential}.
   \pause
   \item
-    Boxing analogy: Win by KO.
+    Simultaneous games include the famous \textbf{Prisoner's Dilemma}: should a prisoner testify against his partner in exchange for a light sentence, knowing that his partner is simultaneously given the same option? TODO: Add picture
   \end{itemize}
+
 \end{frame}
 
-\begin{frame}{Two Player Infinite Games}
-
+\begin{frame}{What's a Sequential Game?}
   \begin{itemize}
   \item
-    Then, I can extend a finite game into an infinite-length game where there may always be legal moves to choose from for each player.
+    However, my research is concerned with \textbf{sequential games}. Tic-tac-toe and Chess are handy examples we're all familiar with. TODO: Add pictures
   \pause
   \item
-    In that case, the game never ends, but as long as the players involved have a gameplan, we can consider the result of them sticking to said gameplan: the sequence of choices made by each player.
-  \pause
-  \item
-    If the game didn't end, we'll have a rule to judge how each player did throughout the game, and declare a winner that way.
-  \pause
-  \item
-    Boxing analogy: Win by Decision
+    Mathematically, we can model sequential games by tracking the decisions made by each player during each round. TODO: Add gameplay records for Tic-tac-toe and Chess.
   \end{itemize}
 \end{frame}
 
-\section{Example of a Topological Game}
+\begin{frame}{And what's this about Infinite-Length Games?}
+% cool reference http://www.logic.univie.ac.at/~ykhomski/infinitegames2010/Infinite%20Games%20Sofia.pdf
+  \begin{itemize}
+  \item
+    A good game designer would avoid this, but mathematically we can consider games which aren't required to terminate in a victory for either player.
+  \pause
+  \item
+    In that case, the game never ends, but as long as the players involved have a gameplan, we can consider the result of them sticking to their gameplan: the sequence of choices made by each player. TODO: Add choices for tic-tac-toe on the integer lattice.
+  \pause
+  \item
+    If the game doesn't end, we'll have a rule to judge how each player did throughout the game, and declare a winner that way.
+  \end{itemize}
+\end{frame}
 
-\subsection{The Open-Point Game in $\mathbb{R}^2$}
+\begin{frame}
+  \begin{itemize}
+  \item 
+    Example game: Player I and Player II take turns picking positive integers $2$ - $9$. A player wins as soon as if the product of all chosen numbers equals a multiple of $18$. If the game never ends, Player I wins as long as she chose $9$ at least once during the game; otherwise Player II wins.
 
-\begin{frame}{The Open-Point Game in $\mathbb{R}^2$}
+    TODO: Have picture of two players picking numbers.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{itemize}
+  \item
+    While it's easy to imagine this game never ending (both players always picking $5$ would do it), we can say that Player II has a \textbf{winning strategy}:
+    \pause
+    \begin{itemize}
+      \item Player I can't play any number besides $5$ or $7$ unless it results in a multiple of $18$ - otherwise Player II can make the multiple of $18$ on the next turn.
+      \pause
+      \item If Player II always plays $7$ in response to $5$ or $7$ being played by Player I, then Player I can never make a multiple of $18$ on her own.
+    \end{itemize}
+  \pause
+  \item 
+    Thus one winning strategy for Player II is to always respond with $7$ if Player I chooses $5$ or $7$, and to pick an appopriate number to make a multiple of $18$ otherwise.
+  \pause
+    \begin{itemize}
+      \item 
+        The result of any game where Player II sticks to this strategy either involves Player II making a multiple of $18$, or Player I never choosing $9$!
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{So it's sort of like boxing...}
+  \begin{itemize}
+  \item
+    You can think of these games like a \textbf{boxing match} with infinite rounds. TODO: Add Punchout screenshot
+  \pause
+  \item
+    Each boxer takes turns swinging at each other. If the swing knocks the other guy out, that's a Win by KO.
+  \pause
+  \item
+    If neither boxer manages to KO the other, then we turn to the judges to evaluate based on how they played throughout the entire game. One of the players must get a Win by Decision.
+  \end{itemize}
+\end{frame}
+
+\section{Topological Games}
+
+\begin{frame}{Topological Games}
   
   \begin{itemize}
     \item
-      Topological games are infinite-length games ``played upon'' an arbitrary topological space.
+      Topological games are infinite-length sequential games ``played upon'' an arbitrary topological space.
     \pause
     \item
-      I'll walk through the rules of $Con_{O,P}(\mathbb{R}^2,\vec{0})$, using the analogy of a dartboard.
-    \pause
+      You can think of topological spaces as variant ``game boards'': the rules are always the same, but the available moves depend on the board we're playing on.
+  \end{itemize}
+
+\end{frame}
+
+\subsection{Topological Darts in the $xy$-plane}
+
+\begin{frame}{Topological Darts in the $xy$-plane}
+  \begin{itemize}
     \item
-      I'll show how $O$ has a winning strategy in this game, and introduce the notation $O \uparrow Con_{O,P}(\mathbb{R}^2,\vec{0})$
+      Consider a game of ``Topological Darts'' played in the $xy$-plane. During each round:
+    \pause
+    \begin{itemize}
+      \item
+        Player B places a circular dart\textbf{B}oard on the plane so that it covers the point $(0,0)$.
+      \pause
+      \item
+        Player D responds by throwing a \textbf{D}art at the dartboard (aka picking a point on the dartboard). TODO add picture
+    \end{itemize}
   \end{itemize}
 \end{frame}
 
-\subsection{The Open-Point Game on the Milky Way Space}
+\begin{frame}
+  \begin{itemize}
+    \item
+      Player B automatically wins if Player D ever misses the dartboard.
+    \pause
+    \item
+      If the game never ends, we say Player D wins if she can show there exists a dartboard covering $(0,0)$ that she \textit{missed} during every round of the game. Otherwise Player B wins.
+  \end{itemize}
+\end{frame}
 
-\begin{frame}{The Open-Point Game on the Milky Way Space}
+\begin{frame}
+  Player B has a winning strategy for Topological Darts when played in the $xy$-plane. TODO: Add picture.
+\end{frame}
+
+\subsection{Topological Darts in the Milky Way Space}
+
+\begin{frame}{Topological Darts in the Milky Way Space}
   
   \begin{itemize}
     \item
-      I'll compare the last game to $Con_{O,P}(MW,\infty)$.
+      The interior of the circular dartboards in the $xy$-plane represent topological objects known as \textbf{open sets}. What these open sets look like depend on the topological space.
     \pause
     \item
-      I'll show the winning strategy for $P$.
+      In our so-called Milky Way Space, the dartboards / open sets placed around the point $\infty$ look like this: TODO Add picture
   \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+  
+  Player D has a winning strategy for Topological Darts when played in the Milky Way Space. TODO: Add picture
 
 \end{frame}
 
@@ -235,14 +358,78 @@
 \begin{frame}{So what?}
   \begin{itemize}
     \item
-      We care about these games because they provide very slick ways of defining ``properties'' of a topological space.
+      We care about these games because they provide very slick ways of describing possible structures of a topological space.
     \pause
-    \item
-      We'll give a nasty definition of property $w$, and then claim that it's simpler to just say spaces $X$ where $O$ always has a winning strategy in the game $Con_{O,P}(X,x)$, or $O \uparrow Con_{O,P}(X,x)$.
-    \pause
-    \item
-      So rather than going through the details of a complex definition, we can just figure out whether or not $O$ can somehow guarantee a victory in the game.
+      \begin{itemize}
+        \item
+          A topological space $X$ is an ``$\alpha_2$ Fr\'echet-Urysohn'' space if for each subset $A$ of $X$, and each point $x \in \overline{A}$, there exists a sequence of points in $A$ converging to $x$, and for each countable collection of sequences coverging to $x$, there is yet another sequence converging to $x$ which intersects each of these infinitely many times.
+      \end{itemize}
   \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{itemize}
+    \item
+      It's much simpler to say this:
+    \pause
+      \begin{itemize}
+        \item
+          A topological space $X$ is an ``$\alpha_2$ Fr\'echet-Urysohn'' space if Player D has no winning strategy in a game of Topological Darts played in $X$.
+      \end{itemize}
+    \pause
+    \item
+      So we know the $xy$-plane is ``$\alpha_2$ Fr\'echet-Urysohn'' (we found a winning strategy for Player B, so Player D doesn't have one), but the Milky Way Space isn't (we found a winning strategy for Player D).
+  \end{itemize}
+\end{frame}
+
+\section{Limited Information Games}
+
+\subsection{What are these?}
+
+\begin{frame}{Consquences of Limited Information}
+  \begin{itemize}
+    \item
+      My reseach is concerned with the consquences of one player having limited information in a topological game.
+    \pause
+    \item
+      So far we've assumed both players have perfect memories. But what happens if a player can only remember the most recent move of her opponent?
+  \end{itemize}
+    \pause
+  In the $xy$-plane, this is of no consequence to player B. TODO add picture.
+\end{frame}
+\begin{frame}
+  But in the Milky Way Space, this lack of information hurts Player D. TODO add picture.
+  \begin{itemize}
+  \item
+   So even though Player D has a winning perfect information strategy, Player D lacks a winning ``tactical'' strategy relying on the most recent move of the opponent.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{itemize}
+    \item
+      The precense or absence of perfect information strategies in a topological game characterize some structure of the space played upon - same goes for limited information strategies.
+    \pause
+    \begin{itemize}
+      \item
+        A (``countably-tight'', ``locally-compact'') topological space $X$ is \textbf{``meta-Lindel\"of''} when Player B has a winning strategy for Topological Darts played in the ``one-point compactification'' of $X$.
+      \pause
+      \item
+        A (``countably-tight'', ``locally-compact'') topological space $X$ is \textbf{``meta-compact''} when Player B has a winning \textbf{tactical} strategy for Topological Darts played in the ``one-point compactification'' of $X$.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\subsection{My Results}
+
+\begin{frame}{So what have you done?}
+asdf
+\end{frame}
+
+\section{Thanks / Questions?}
+
+\begin{frame}{Thank you!}
+Any questions?
 \end{frame}
 
 \end{document}
